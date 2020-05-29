@@ -112,6 +112,10 @@ section {
   }
   &.vitrine {
     .container {
+      display: flex;
+      justify-content: space-between;
+      margin: 30px auto;
+
       .list {
         display: flex;
         justify-content: space-around;
