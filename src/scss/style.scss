@@ -165,14 +165,18 @@ section {
         display: flex;
         justify-content: left;
         margin-bottom: 15px;
-        width: 100%;
         overflow: hidden;
         overflow-x: auto;
         padding: 10px;
 
-        @media (min-width: 768px) {
-          width: 965px;
-          justify-content: space-around;
+        > div {
+          display: flex;
+          width: 900px;
+
+          @media (min-width: 768px) {
+            width: 965px;
+            justify-content: space-around;
+          }
         }
       }
     }
