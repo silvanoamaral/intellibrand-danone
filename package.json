@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app/server/",
+    "start": "node app/server/",
     "gulp": "gulp default",
     "start:dev": "concurrently \"npm run server\" \"npm run gulp\" --open"
   },
