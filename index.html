@@ -2,7 +2,6 @@
 <head>
   <title>intellibrand Danone Nutridrink</title>
   <meta name="description" content="intellibrand Danone Nutridrink">
-  <meta name="author" content="Silvano Amaral">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet">
 
@@ -125,29 +124,6 @@
         </div>
       </div>
     </section>
-  <script>
-    $('.owl-carousel').owlCarousel({
-      loop:true,
-      responsiveClass:true,
-      responsive:{
-          0:{
-            margin:10,
-              items:2,
-              nav:true
-          },
-          600:{
-            items:2,
-            nav:false,
-            loop:false
-          },
-          1000:{
-            items:1,
-            nav:true,
-            loop:false
-          }
-      }
-    })
-  </script>
 
   <footer></footer>
 
@@ -155,12 +131,6 @@
   <link rel="stylesheet" href="src/assets/lib/owlcarousel/owl.carousel.min.css">
   <link rel="stylesheet" href="src/assets/lib/owlcarousel/owl.theme.default.min.css">
 
-  <script src="src/View/FooterViews.js"></script>
-  <script>
-    const footer = new FooterViews(document.querySelector('footer'))
-    footer.update()
-  </script>
- 
   
 
   <div class="lightbox hide">
@@ -221,47 +191,11 @@
       </div>
     </div>
   </div>
+
+
+  
+
   <script>
-    function atualizarBanner() {
-      if(isMobile()) {
-        $('section.banner__principal img').attr('src','src/assets/images/banner-principal-mobile.png')
-      } else {
-        $('section.banner__principal img').attr('src','src/assets/images/banner-principal.png')
-      }
-    }
-    function isMobile() {
-      return window.matchMedia("only screen and (max-width: 768px)").matches
-    }
-
-    $(window).resize(function(){
-      atualizarBanner()
-    })
-
-    atualizarBanner()
-
-    //Evento para abrir ligtbox
-    $(document).on('click','section.vitrine .card button', function() {
-      $('.lightbox').removeClass('hide')
-      $("html, body").animate({ scrollTop: 0 }, 600)
-    })
-    
-    //Evento clique para fechar ligthbox
-    function closeLigthbox() {
-      $('.lightbox').addClass('hide')
-    }
-    $(document).on('click','.lightbox button.btn__close', function() {
-      closeLigthbox()
-    })
-    $(document).on('click','.lightbox .lightboxOverlay', function() {
-      closeLigthbox()
-    })
-
-    //Evento para selecionar tamanhos
-    $(document).on('click','.lightbox .size>div button', function() {
-      $('.lightbox .size>div button').removeClass('active')
-      $(this).addClass('active')
-    })
-
     const data = JSON.stringify({
       email: 'danone@intellibrand.ai',
       password: 'lg2RBkuZgTzo',
@@ -279,5 +213,15 @@
       }
     })
   </script>
+
+  <script src="src/View/FooterViews.js"></script>
+  <script>
+    const footer = new FooterViews(document.querySelector('footer'))
+    footer.update()
+  </script>
+
+  <script src="src/helpers/bannerPrincipal.js"></script>
+  <script src="src/helpers/initCarousel.js"></script>
+  <script src="src/helpers/ligtbox.js"></script>
 </body>
 </html>
