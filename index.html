@@ -242,6 +242,23 @@
     $(document).on('click','.lightbox .lightboxOverlay', function() {
       closeLigthbox()
     })
+
+    const data = JSON.stringify({
+      email: 'danone@intellibrand.ai',
+      password: 'lg2RBkuZgTzo',
+    })
+
+    fetch('https://locatestore.intellibrand.ai/auth', {
+      method: 'post',
+      body: data,
+      headers: { 'Content-type': 'application/json' }
+    }).then(res => {
+      if(res.status !== 200) {
+        console.error('Falha ao tentar acessar o token.', res)
+      } else {
+        return res
+      }
+    })
   </script>
 </body>
 </html>
