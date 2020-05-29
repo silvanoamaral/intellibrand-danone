@@ -5,7 +5,6 @@
   font-family: 'Montserrat', sans-serif;
 }
 
-
 .container {
   width: 100%;
   max-width: 1366px;
@@ -16,7 +15,13 @@ section {
   &.banner {
     position: relative;
     z-index: 0;
-    margin-top: 50px;
+    margin: 0;
+    overflow: hidden;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      margin-top: 50px;
+    }
 
     &__principal {
       width: 100%;
@@ -29,19 +34,38 @@ section {
     }
     
     .container {
-      display: flex;
-      justify-content: space-between;
+      display: inline-block;
+      text-align: center;
+
+      @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-between;
+      }
 
       .inferior {
-        width: 395px;
-        height: 478px;
+        width: auto;
+        padding: 10px;
+
+        img {
+          width: 100%;
+        }
+        @media (min-width: 768px) {
+          width: 395px;
+          height: 478px;
+          padding: 0;
+        }
       }
 
       .carousel {
-        width: 784px;
+        width: auto;
         max-width: 784px;
         position: relative;
-        left: -5%;
+        left: 0;
+
+        @media (min-width: 768px) {
+          width: 784px;
+          left: -5%;
+        }
 
         .item {
           width: 784px;
@@ -72,7 +96,11 @@ section {
               }
               &.owl-next {
                 position: absolute;
-                right: -5%;
+                right: 0;
+
+                @media (min-width: 768px) {
+                  right: -5%;
+                }
 
                 span {
                   transform: rotate(-45deg);
@@ -81,7 +109,11 @@ section {
               }
               &.owl-prev {
                 position: absolute;
-                left: -5%;
+                left: 0;
+
+                @media (min-width: 768px) {
+                  left: -5%;
+                }
 
                 span {
                   transform: rotate(135deg);
@@ -111,16 +143,38 @@ section {
     }
   }
   &.vitrine {
+    overflow: hidden;
+    width: 100%;
+
+    .banner__lateral {
+      display: none;
+      @media (min-width: 768px) {
+        display: block;
+      }
+    }
     .container {
-      display: flex;
+      display: block;
       justify-content: space-between;
       margin: 30px auto;
 
+      @media (min-width: 768px) {
+        display: flex;
+      }
+
       .list {
         display: flex;
-        justify-content: space-around;
-        width: 965px;
+        justify-content: left;
         margin-bottom: 15px;
+        width: 100%;
+        overflow: hidden;
+        overflow-x: auto;
+        padding: 10px;
+
+        @media (min-width: 768px) {
+          width: 965px;
+          justify-content: space-around;
+          padding: 0;
+        }
       }
     }
     .card {
@@ -132,6 +186,12 @@ section {
       text-align: center;
       padding: 15px;
       position: relative;
+      margin-right: 15px;
+      margin-bottom: 20px;
+
+      @media (min-width: 768px) {
+        margin: 0;
+      }
 
       .image {
         width: 100%;
@@ -184,10 +244,14 @@ section {
 footer {
   .disclaimer {
     border-top: 1px solid #E8E8E8;
-    border-bottom: 1px solid #E8E8E8;
-    width: 100%;
-    padding: 14px 0;
+    border-bottom: 1px solid #E8E8E8;    
+    padding: 14px;
     margin-top: 50px;
+
+    @media (min-width: 768px) {
+      padding: 14px 0;
+      width: 100%;
+    }
   }
   .container {
     color: #272727;
@@ -213,16 +277,11 @@ footer {
   }
 }
 
-body {
-  &.fixed {
-    overflow: hidden;
-  }
-}
 .lightbox {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
+  top: 20px;
   left: 0;
 
   &.hide {
@@ -242,6 +301,7 @@ body {
       color: #707070;
       width: 34px;
       height: 34px;
+      z-index: 22;
     }
   }
 
@@ -259,10 +319,14 @@ body {
 
       button {
         width: 288px;
-        height: 56px;
+        height: 40px;
         background: #FFFFFF 0% 0% no-repeat padding-box;
         border: 1px solid #EAEAEA;
         margin: 0 10px;
+
+        @media (min-width: 768px) {
+          height: 50px;
+        }
 
         &.active {
           border-color: #8757A6;
@@ -297,50 +361,100 @@ body {
     }
     
     div > div:first-child {
-      display: flex;
-      justify-content: space-around;
+
+      @media (min-width: 768px) {
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .imagen {
+        padding: 0 10px;
+        margin-top: -29px;
+
+        @media (min-width: 768px) {
+          margin-top: 0;
+        }
+        
+        img {
+          width: 100%;
+        }
+      }
     }
 
     .descrition {
       background: #F7F7F7 0% 0% no-repeat padding-box;
       border: 1px solid #EAEAEA;
       border-radius: 4px;
-      padding: 15px;
+      padding: 10px;
+      width: 90%;
+      margin: 0 auto;
       color: #2E2E2E;
 
+      @media (min-width: 768px) {
+        padding: 15px;
+        width: auto;
+        margin: 0;
+      }
+
       strong {
-        font-size: 22px;
+        font-size: 18px;
         margin-bottom: 15px;
         display: block;
+
+        @media (min-width: 768px) {
+          font-size: 22px;
+        }
       }
       p {
-        font-size: 16px;
+        font-size: 13px;
+
+        @media (min-width: 768px) {
+          font-size: 16px;
+        }
       }
     }
   }
   .details {
-    max-width: 480px;
-    padding-top: 35px;
+    max-width: 100%;
+    padding-top: 15px;
+    margin: 0 auto;
 
     @media (min-width: 768px) {
-      color: #2E2E2E;
+      max-width: 480px;
     }
+
+    @media (min-width: 768px) {
+      margin: 0;
+      padding-top: 35px;
+    }   
+    
     h4 {
       text-align: center;
       color: #2E2E2E;
-      font-size: 22px;
+      font-size: 17px;
       margin-bottom: 10px;
+
+      @media (min-width: 768px) {
+        font-size: 22px;
+      }
     }
   }
 
   .sellers {
     margin-top: 22px;
+    padding: 0 10px;
+
+    @media (min-width: 768px) {
+      padding: 0;
+    }
 
     > div {
-      overflow: hidden;
-      overflow-y: scroll;
-      height: 200px;
-      padding-top: 13px;
+      @media (min-width: 768px) {
+        padding-top: 13px;
+        overflow: hidden;
+        overflow-y: scroll;
+        height: 200px;
+      }
   
       &::-webkit-scrollbar {
         width: 10px;
@@ -364,7 +478,11 @@ body {
 
     ul {
       list-style: none;
-      width: 97%;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        width: 97%;
+      }
 
       li {
         border: 1px solid #EAEAEA;
@@ -372,16 +490,40 @@ body {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 15px;
+        padding: 5px;
         margin-bottom: 20px;
+
+        @media (min-width: 768px) {
+          padding: 15px;
+        }
+
+        span {
+          width: 71px;
+
+          @media (min-width: 768px) {
+            width: auto;
+          }
+
+          img {
+            width: 100%;
+          }
+        }
 
         strong {
           color: #4C1B74;
-          font-size: 20px;
+          font-size: 14px;
+
+          @media (min-width: 768px) {
+            font-size: 20px;
+          }
         }
         p {
           color: #3F7E00;
-          font-size: 12px;
+          font-size: 11px;
+
+          @media (min-width: 768px) {
+            font-size: 12px;
+          }
         }
         a {
           display: flex;
@@ -389,8 +531,14 @@ body {
           text-decoration: none;
           background: #8757A6;
           color: #fff;
-          padding: 14px;
+          padding: 10px;
+          font-size: 12px;
           border-radius: 5px;
+
+          @media (min-width: 768px) {
+            padding: 14px;
+            font-size: 14px;
+          }
         }
       }
     }
