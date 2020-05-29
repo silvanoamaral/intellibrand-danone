@@ -4,44 +4,30 @@ class VitrineView {
   }
 
   _template(model) {
-    return `<div class="title">
-      <img src="/src/assets/images/result-pick.svg" alt="result-pick" />
-      <img src="/src/assets/images/result-our-picks-for-you.svg" alt="result-our-picks-for-you" />          
-    </div>
-    <div class="result">
+    return `<div class="list">
+    <div>
     ${
       model.map(item => {
         return `<div class="card">
-          <div class="image">
-            <img src="${item.url}" alt="${item.name}" />
-          </div>
-          <div>
-            <strong>${item.name}</strong>
-            <div class="info">
-              <div>
-                <strong>$${item.price}</strong>
-              </div>
-              <div class="icones">
-                <img src="/src/assets/images/PetCard.svg" alt="" />
-                <img src="/src/assets/images/HighSunCard.svg" alt="" />
-                <img src="/src/assets/images/HighSun.svg" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>`
+        <div class="image">
+          <img src="${item.images[0].urls.small}" alt="${item.name}">
+        </div>
+        <p>${item.name}</p>
+        <button data-ean="${item.ean}">ESCOLHA O MELHOR PREÇO</button>
+      </div>`
       }).join('')
-    }</div>`
+    }</div>
+    </div>`
   }
 
-  removeHide() {
-    if(document.querySelector('.vitrine.hide')) {
-      document.querySelector('.vitrine').classList.remove('hide')
+  removeLoading() {
+    if(document.querySelector('.loading')) {
+      $('.loading').remove()
     }
   }
 
   loading() {
-    this._elemento.innerHTML = `<div class="loading">Aguarde...</div>`
-    this.removeHide()
+    $(this._elemento).append(`<div class="loading">Aguarde...</div>`)
   }
 
   error() {
@@ -54,11 +40,14 @@ class VitrineView {
         <img src="/src/assets/images/illustration.svg" alt="No results yet" />
       </div>
     </div>`
-    this.removeHide()
+    this.removeLoading()
   }
 
   update(model) {
-    this.removeHide()    
-    this._elemento.innerHTML = this._template(model)
+    this.removeLoading()
+    var obj = model.data
+    $(this._elemento).append(this._template(obj.slice(0,3)))
+    $(this._elemento).append(this._template(obj.slice(3,6)))
+    $(this._elemento).append(this._template(obj.slice(6)))
   }
 }

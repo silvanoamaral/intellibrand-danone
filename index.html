@@ -20,90 +20,13 @@
     
     <section class="vitrine">
       <div class="container">
-        <div class="">
-          <div class="list">
-            <div>
-              <div class="card">
-                <div class="image">
-                  <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
-                </div>
-                <p>Nutridrink Compact Baunilha 125ml - Danone</p>
-                <button>ESCOLHA O MELHOR PREÇO</button>
-              </div>
-              <div class="card">
-                <div class="image">
-                  <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
-                </div>
-                <p>Nutridrink Compact Baunilha 125ml - Danone</p>
-                <button>ESCOLHA O MELHOR PREÇO</button>
-              </div>
-              <div class="card">
-                <div class="image">
-                  <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
-                </div>
-                <p>Nutridrink Compact Baunilha 125ml - Danone</p>
-                <button>ESCOLHA O MELHOR PREÇO</button>
-              </div>
-            </div>
-          </div>
-          <div class="list">
-            <div>
-              <div class="card">
-                <div class="image">
-                  <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
-                </div>
-                <p>Nutridrink Compact Baunilha 125ml - Danone</p>
-                <button>ESCOLHA O MELHOR PREÇO</button>
-              </div>
-              <div class="card">
-                <div class="image">
-                  <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
-                </div>
-                <p>Nutridrink Compact Baunilha 125ml - Danone</p>
-                <button>ESCOLHA O MELHOR PREÇO</button>
-              </div>
-              <div class="card">
-                <div class="image">
-                  <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
-                </div>
-                <p>Nutridrink Compact Baunilha 125ml - Danone</p>
-                <button>ESCOLHA O MELHOR PREÇO</button>
-              </div>
-            </div>
-          </div>
-          <div class="list">
-            <div>
-              <div class="card">
-                <div class="image">
-                  <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
-                </div>
-                <p>Nutridrink Compact Baunilha 125ml - Danone</p>
-                <button>ESCOLHA O MELHOR PREÇO</button>
-              </div>
-              <div class="card">
-                <div class="image">
-                  <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
-                </div>
-                <p>Nutridrink Compact Baunilha 125ml - Danone</p>
-                <button>ESCOLHA O MELHOR PREÇO</button>
-              </div>
-              <div class="card">
-                <div class="image">
-                  <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
-                </div>
-                <p>Nutridrink Compact Baunilha 125ml - Danone</p>
-                <button>ESCOLHA O MELHOR PREÇO</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class=""></div>
         <div class="banner__lateral">
           <img src="src/assets/images/banner-lateral.png" alt="banner-lateral" />
         </div>
       </div>
     </section>
-    
-
+  
     <section class="banner">
       <div class="container">
         <div class="inferior">
@@ -136,8 +59,6 @@
   <!-- Owl Stylesheets -->
   <link rel="stylesheet" href="src/assets/lib/owlcarousel/owl.carousel.min.css">
   <link rel="stylesheet" href="src/assets/lib/owlcarousel/owl.theme.default.min.css">
-
-  
 
   <div class="lightbox hide">
     <div class="lightboxOverlay"></div>
@@ -198,36 +119,18 @@
     </div>
   </div>
 
-
-  
-
-  <script>
-    const data = JSON.stringify({
-	"email": "danone@intellibrand.ai",
-	"password": "9DXODD6l6P"
-})
-
-    fetch('https://locatestore.intellibrand.ai/auth', {
-      method: 'post',
-      body: data,
-      headers: { 'Content-type': 'application/json' }
-    }).then(res => {
-      if(res.status !== 200) {
-        console.error('Falha ao tentar acessar o token.', res)
-      } else {
-        return res
-      }
-    })
-  </script>
-
   <script src="src/View/FooterViews.js"></script>
   <script>
     const footer = new FooterViews(document.querySelector('footer'))
     footer.update()
   </script>
 
+  <script src="src/View/VitrineView.js"></script>
+  <script src="src/services/obterProdutos.js"></script>
+  <script src="src/View/LightBoxView.js"></script>
+
   <script src="src/helpers/bannerPrincipal.js"></script>
   <script src="src/helpers/initCarousel.js"></script>
-  <script src="src/helpers/ligtbox.js"></script>
+  <script src="src/helpers/lightbox.js"></script>
 </body>
 </html>
