@@ -1,0 +1,220 @@
+<html>
+<head>
+  <title>intellibrand Danone Nutridrink</title>
+  <meta name="description" content="intellibrand Danone Nutridrink">
+  <meta name="author" content="Silvano Amaral">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- javascript -->
+  <script src="src/assets/lib/jquery/jquery.min.js"></script>
+  <script src="src/assets/lib/owlcarousel/owl.carousel.js"></script>
+
+</head>
+<body>
+  <div id="root">
+    <section class="banner__principal">
+      <img src="src/assets/images/banner-principal.png" alt="banner-principal" />
+    </section>
+    
+    <section class="vitrine">
+      <div class="container">
+        <div class="list">
+          <div class="card">
+            <div class="image">
+              <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
+            </div>
+            <p>Nutridrink Compact Baunilha 125ml - Danone</p>
+            <button>ESCOLHA O MELHOR PREÇO</button>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
+            </div>
+            <p>Nutridrink Compact Baunilha 125ml - Danone</p>
+            <button>ESCOLHA O MELHOR PREÇO</button>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
+            </div>
+            <p>Nutridrink Compact Baunilha 125ml - Danone</p>
+            <button>ESCOLHA O MELHOR PREÇO</button>
+          </div>
+        </div>
+        <div class="list">
+          <div class="card">
+            <div class="image">
+              <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
+            </div>
+            <p>Nutridrink Compact Baunilha 125ml - Danone</p>
+            <button>ESCOLHA O MELHOR PREÇO</button>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
+            </div>
+            <p>Nutridrink Compact Baunilha 125ml - Danone</p>
+            <button>ESCOLHA O MELHOR PREÇO</button>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img src="src/assets/images/banner-produto.png" alt="Nutridrink Compact Baunilha 125ml - Danone" />
+            </div>
+            <p>Nutridrink Compact Baunilha 125ml - Danone</p>
+            <button>ESCOLHA O MELHOR PREÇO</button>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+    
+
+    <section class="banner">
+      <div class="container">
+        <div class="inferior">
+          <img src="src/assets/images/banner-inferior.png" alt="banner-inferior" />
+        </div>
+        <div class="carousel">
+          <div class="owl-carousel owl-theme">
+            <div class="item">
+              <img src="src/assets/images/banner-carousel.png" alt="banner-carousel 1" />
+            </div>
+            <div class="item">
+              <img src="src/assets/images/banner-carousel.png" alt="banner-carousel 2" />
+            </div>
+            <div class="item">
+              <img src="src/assets/images/banner-carousel.png" alt="banner-carousel 3" />
+            </div>
+            <div class="item">
+              <img src="src/assets/images/banner-carousel.png" alt="banner-carousel 4" />
+            </div>
+            <div class="item">
+              <img src="src/assets/images/banner-carousel.png" alt="banner-carousel 5" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop:true,
+      margin:10,
+      responsiveClass:true,
+      responsive:{
+          0:{
+              items:1,
+              nav:true
+          },
+          600:{
+              items:1,
+              nav:false
+          },
+          1000:{
+              items:1,
+              nav:true,
+              loop:false
+          }
+      }
+    })
+  </script>
+
+  <footer></footer>
+
+  <!-- Owl Stylesheets -->
+  <link rel="stylesheet" href="src/assets/lib/owlcarousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="src/assets/lib/owlcarousel/owl.theme.default.min.css">
+
+  <script src="src/View/FooterViews.js"></script>
+  <script>
+    const footer = new FooterViews(document.querySelector('footer'))
+    footer.update()
+  </script>
+ 
+  <link href="./src/css/style.css" rel="stylesheet" type="text/css" />
+
+  <div class="lightbox hide">
+    <div class="lightboxOverlay"></div>
+    <div class="container">
+      <div class="content">
+        <div>
+          <button class="btn__close">X</button>
+          <div class="imagen">
+            <img src="src/assets/images/banner-produto-ligthbox.png" alt="Nutridrink Protein Pó Sem Sabor lata" />
+          </div>
+          <div class="details">
+            <h4>Nutridrink Protein Pó Sem Sabor lata</h4>
+            <div class="size">
+              <strong class="title">Tamanhos:</strong>
+              <div>
+                <button>350g</button>
+                <button class="active">700g</button>
+              </div>
+            </div>
+            <div class="sellers">
+              <strong class="title">Onde comprar:</strong>
+              <div>
+                <ul>
+                  <li>
+                    <span>
+                      <img src="src/assets/images/logo-seller.png" alt="logo seller" />
+                    </span>
+                    <strong>R$ 148,00</strong>
+                    <p>Disponível</p>
+                    <a href="">Comprar</a>
+                  </li>
+                  <li>
+                    <span>
+                      <img src="src/assets/images/logo-seller.png" alt="logo seller" />
+                    </span>
+                    <strong>R$ 348,00</strong>
+                    <p>Disponível</p>
+                    <a href="">Comprar</a>
+                  </li>
+                  <li>
+                    <span>
+                      <img src="src/assets/images/logo-seller.png" alt="logo seller" />
+                    </span>
+                    <strong>R$ 1.148,00</strong>
+                    <p>Disponível</p>
+                    <a href="">Comprar</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="descrition">
+          <strong>Descrição</strong>
+          <p>O Nutridrink Protein Sem Sabor é indicado para completar e balancear a dieta diária, oferecendo proteína, energia, fibras e 29 vitaminas e minerais. É possível adicioná-lo em outros alimentos, tanto doces quanto salgados.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    //Evento para abrir ligtbox
+    $(document).on('click','section.vitrine .card button', function() {
+      $('body').addClass('fixed')
+      $('.lightbox').removeClass('hide')
+    })
+
+    //Evento para selecionar tamanhos
+    $(document).on('click','.lightbox .size>div button', function() {
+      $('.lightbox .size>div button').removeClass('active')
+      $(this).addClass('active')
+    })
+    
+    //Evento clique para fechar ligthbox
+    function closeLigthbox() {
+      $('.lightbox').addClass('hide')
+      $('body').removeClass('fixed')
+    }
+    $(document).on('click','.lightbox button.btn__close', function() {
+      closeLigthbox()
+    })
+    $(document).on('click','.lightbox .lightboxOverlay', function() {
+      closeLigthbox()
+    })
+  </script>
+</body>
+</html>
