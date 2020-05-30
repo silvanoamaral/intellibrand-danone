@@ -14,7 +14,7 @@ class VitrineView {
       model.map(item => {
         return `<div class="card">
         <div class="image">
-          <img src="${item.images[0].urls.small}" alt="${item.name}">
+          <img src="${item.images[0].urls.big}" alt="${item.name}">
         </div>
         <p>${item.name}</p>
         <button data-ean="${item.ean}">${this.isMobile() ? 'VER OFERTAS' : 'ESCOLHA O MELHOR PREÇO'}</button>
