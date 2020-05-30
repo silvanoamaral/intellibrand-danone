@@ -3,6 +3,10 @@ class VitrineView {
     this._elemento = elemento
   }
 
+  isMobile() {
+    return window.matchMedia("only screen and (max-width: 768px)").matches
+  }
+
   _template(model) {
     return `<div class="list">
     <div>
@@ -13,7 +17,7 @@ class VitrineView {
           <img src="${item.images[0].urls.small}" alt="${item.name}">
         </div>
         <p>${item.name}</p>
-        <button data-ean="${item.ean}">ESCOLHA O MELHOR PREÇO</button>
+        <button data-ean="${item.ean}">${this.isMobile() ? 'VER OFERTAS' : 'ESCOLHA O MELHOR PREÇO'}</button>
       </div>`
       }).join('')
     }</div>

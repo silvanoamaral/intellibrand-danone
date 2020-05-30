@@ -25,6 +25,7 @@
   }//fim getToken
 
   async function getProducts(token) {
+    sessionStorage.setItem('tokenintellibrand', token)
     let resPrd = await fetch('https://locatestore.intellibrand.ai/products/', {
       method: 'get',
       headers: {

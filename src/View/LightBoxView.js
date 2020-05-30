@@ -3,20 +3,24 @@ class LightBoxView {
     this._elemento = elemento
   }
 
+  formatter = new Intl.NumberFormat([], {
+    style: 'currency',
+    currency: 'BRL'
+  })
+
   _template(model) {
-    return model.map(item => {
-      return `<div class="lightbox">
+    return `<div class="lightbox">
         <div class="lightboxOverlay"></div>
         <div class="container">
           <div class="content">
             <div>
               <button class="btn__close">X</button>
               <div class="imagen">
-                <img src="${item.images[0].urls.big}" alt="${item.name}" />
+                <img src="${model.images[0].urls.big}" alt="${model.name}" />
               </div>
               <div class="details">
-                <h4>${item.name}</h4>
-                <div class="size">
+                <h4>${model.name}</h4>
+                <div class="size" style="display:none">
                   <strong class="title">Tamanhos:</strong>
                   <div>
                     <button>350g</button>
@@ -28,14 +32,16 @@ class LightBoxView {
                   <div>
                     <ul>
                       ${
-                        item.offers.map(seller => {
+                        model.offers.map(seller => {
                           return `<li>
                             <span>
-                              <img src="src/assets/images/logo-seller.png" alt="${seller.retailer}" />
+                              <img src="${seller.retailerLogo}" alt="${seller.retailer}" />
                             </span>
-                            <strong>R$ ${seller.price}</strong>
-                            <p>Disponível</p>
-                            <a href="">Comprar</a>
+                            <strong data-price="${seller.price}">
+                             ${this.formatter.format(seller.price)}
+                            </strong>
+                            <p>${seller.available ? 'Disponível' : 'Indisponível'} </p>
+                            <a href="${seller.url}">Comprar</a>
                           </li>`
                         }).join('')
                       }
@@ -46,12 +52,11 @@ class LightBoxView {
             </div>
             <div class="descrition">
               <strong>Descrição</strong>
-              <p>${item.description}</p>
+              <p>${model.description}</p>
             </div>
           </div>
         </div>
       </div>`
-    }).join('')
   }
 
   update(model) {

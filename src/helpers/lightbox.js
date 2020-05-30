@@ -1,7 +1,9 @@
 (() => {
   //Evento para abrir ligtbox
   $(document).on('click','section.vitrine .card button', function() {
-    $('.lightbox').removeClass('hide')
+    var ean = $(this).attr('data-ean')
+
+    obterDetalhesProd(ean)
     $("html, body").animate({ scrollTop: 0 }, 600)
   })
   
