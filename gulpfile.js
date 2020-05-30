@@ -14,7 +14,7 @@ function compilaSass() {
     .src(scssFiles)
     .pipe(sass({ outputStyle: 'compressed' })
     .on('error', sass.logError))
-    .pipe(gulp.dest('src/css'))
+    .pipe(gulp.dest('dist/css'))
 }
 
 function watch() {

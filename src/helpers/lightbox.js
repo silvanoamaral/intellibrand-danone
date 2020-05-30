@@ -9,7 +9,7 @@
   
   //Evento clique para fechar ligthbox
   function closeLigthbox() {
-    $('.lightbox').addClass('hide')
+    $('.lightbox').remove()
   }
   $(document).on('click','.lightbox button.btn__close', function() {
     closeLigthbox()

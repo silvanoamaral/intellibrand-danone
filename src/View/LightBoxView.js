@@ -41,7 +41,7 @@ class LightBoxView {
                              ${this.formatter.format(seller.price)}
                             </strong>
                             <p>${seller.available ? 'Disponível' : 'Indisponível'} </p>
-                            <a href="${seller.url}">Comprar</a>
+                            <a href="${seller.url}" target="_blank">Comprar</a>
                           </li>`
                         }).join('')
                       }
