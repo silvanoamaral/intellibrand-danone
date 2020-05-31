@@ -35,9 +35,9 @@ Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no navega
 ## Publicando o projeto do servidor
 Subir apenas os arquivos
 
-`
-|- dis/
-|- src/
-|- index.html
-`
+```
+├── dis/
+├── src/
+├── index.html
+```
 
