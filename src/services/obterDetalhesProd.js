@@ -2,7 +2,7 @@
 var eleBody = new LightBoxView(container) */
 
 function atualizaPrice (price) {
-  return price.toString().replace('.',',')
+  return price.toFixed(2).toString().replace('.',',')
 }
 
 function template(model) {
