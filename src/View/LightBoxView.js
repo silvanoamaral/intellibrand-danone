@@ -8,6 +8,10 @@ class LightBoxView {
     currency: 'BRL'
   })
 
+  atualizaPrice (price) {
+    return price.toString().replace('.',',')
+  }
+
   _template(model) {
     return `<div class="lightbox">
         <div class="lightboxOverlay"></div>
@@ -38,7 +42,7 @@ class LightBoxView {
                               <img src="${seller.retailerLogo}" alt="${seller.retailer}" />
                             </span>
                             <strong data-price="${seller.price}">
-                             ${this.formatter.format(seller.price)}
+                             ${this.atualizaPrice(seller.price)}
                             </strong>
                             <p>${seller.available ? 'Disponível' : 'Indisponível'} </p>
                             <a href="${seller.url}" target="_blank">Comprar</a>

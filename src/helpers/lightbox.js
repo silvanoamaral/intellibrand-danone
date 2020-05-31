@@ -1,6 +1,6 @@
 (() => {
   //Evento para abrir ligtbox
-  $(document).on('click','section.vitrine .card button', function() {
+  $(document).on('click touchstart','section.vitrine .card button', function() {
     var ean = $(this).attr('data-ean')
 
     obterDetalhesProd(ean)
@@ -11,15 +11,15 @@
   function closeLigthbox() {
     $('.lightbox').remove()
   }
-  $(document).on('click','.lightbox button.btn__close', function() {
+  $(document).on('click touchstart','.lightbox button.btn__close', function() {
     closeLigthbox()
   })
-  $(document).on('click','.lightbox .lightboxOverlay', function() {
+  $(document).on('click touchstart','.lightbox .lightboxOverlay', function() {
     closeLigthbox()
   })
 
   //Evento para selecionar tamanhos
-  $(document).on('click','.lightbox .size>div button', function() {
+  $(document).on('click touchstart','.lightbox .size>div button', function() {
     $('.lightbox .size>div button').removeClass('active')
     $(this).addClass('active')
   })
