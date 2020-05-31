@@ -64,6 +64,7 @@ class LightBoxView {
   }
 
   update(model) {
+    alert('update', model)
     $('body').append(this._template(model))
   }
 }
