@@ -32,7 +32,7 @@ Executa o aplicativo no modo de desenvolvimento. <br />
 Abra [http://localhost:3000](http://localhost:3000) para visualizá-lo no navegador.
 
 
-## Publicando o projeto do servidor
+## Publicando o projeto no servidor
 Subir apenas os arquivos
 
 ```
