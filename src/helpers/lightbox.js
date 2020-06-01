@@ -5,11 +5,13 @@
 
     obterDetalhesProd(ean)
     $("html, body").animate({ scrollTop: 0 }, 600)
+    $('body').addClass('fixed')
   })
   
   //Evento clique para fechar ligthbox
   function closeLigthbox() {
     $('.lightbox').remove()
+    $('body').removeClass('fixed')
   }
   $(document).on('click touchstart','.lightbox button.btn__close', function() {
     closeLigthbox()

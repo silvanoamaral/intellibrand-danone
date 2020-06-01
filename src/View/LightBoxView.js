@@ -16,9 +16,9 @@ class LightBoxView {
     return `<div class="lightbox">
         <div class="lightboxOverlay"></div>
         <div class="container">
+          <button class="btn__close">X</button>
           <div class="content">
             <div>
-              <button class="btn__close">X</button>
               <div class="imagen">
                 <img src="${model.images[0].urls.big}" alt="${model.name}" />
               </div>
