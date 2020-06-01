@@ -14,7 +14,7 @@ class FooterViews {
       </div>
     </div>
     <div class="container">
-      <strong>Consulte sua/seu nutricionista e/ou médico/médica</strong>
+      <strong>Consulte sua nutricionista e/ou médico</strong>
       <img src="src/assets/images/imagen-footer.png" alt="imagen-footer" />
     </div>`
   }
