@@ -25,12 +25,13 @@
   }//fim getToken
 
   async function getProducts(token) {
+    const listProduct = '7891025114901,7891025114895,7891025114888,8716900569821,8716900569869,8716900569845,8716900559006,8716900561757,8716900565441'
     sessionStorage.setItem('tokenintellibrand', token)
     let resPrd = await fetch('https://locatestore.intellibrand.ai/products/', {
       method: 'get',
       headers: {
         'Authorization': token,
-        'products': '8716900559006,8716900561757,8716900565441,8716900569821,7891025114888,8716900569869,8716900569845,7891025114895,7891025114901'
+        'products': listProduct
       }
     })
 
