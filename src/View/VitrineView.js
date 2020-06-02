@@ -49,7 +49,7 @@ class VitrineView {
 
   update(model) {
     this.removeLoading()
-    var obj = model.data
+    var obj = model
     $(this._elemento).append(this._template(obj.slice(0,3)))
     $(this._elemento).append(this._template(obj.slice(3,6)))
     $(this._elemento).append(this._template(obj.slice(6)))
