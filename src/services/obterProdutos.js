@@ -1,43 +1,18 @@
 (() => {
   const elementVitrine = document.querySelector('section.vitrine .container')
   const container = elementVitrine.querySelector('div')
-  var vitrine = new VitrineView(container)
-
-  async function getToken() {
-    vitrine.loading()
-    const data = JSON.stringify({
-      "email": "danone@intellibrand.ai",
-      "password": "9DXODD6l6P"
-    })
-
-    let response = await fetch('https://locatestore.intellibrand.ai/auth', {
-      method: 'post',
-      body: data,
-      headers: { 'Content-type': 'application/json' }
-    })
-    
-    if(response.status !== 200) {
-      console.error('Falha ao tentar acessar o token.', res)
-    }
-
-    let res = await response.json()
-    return res
-  }//fim getToken
+  const vitrine = new VitrineView(container)
 
   function alterarOrdem(data) {
-    const primeiraLista = '7891025114901,7891025114895,7891025114888'
-    const segundaLista = '8716900569821,8716900569869,8716900569845'
-    const terceiraLista = '8716900559006,8716900561757,8716900565441'
-
-    var primeiro = data.filter(item => {
+    const primeiro = data.filter(item => {
       if(item.ean === '7891025114901' || item.ean === '7891025114895' || item.ean === '7891025114888') return item
     })
 
-    var segundo = data.filter(item => {
+    const segundo = data.filter(item => {
       if(item.ean === '8716900569821' || item.ean === '8716900569869' || item.ean === '8716900569845') return item
     })
 
-    var terceiro = data.filter(item => {
+    const terceiro = data.filter(item => {
       if(item.ean === '8716900559006' || item.ean === '8716900561757' || item.ean === '8716900565441') return item
     })
 
@@ -63,8 +38,7 @@
     vitrine.update(alterarOrdem(data.data))
   }
 
-  getToken()
-  .then(data => getProducts(data.token))
-
+  const token = 'JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyIjp7ImlkQnJhbmQiOjEzLCJpZENvbXBhbnkiOjI3LCJ1c2VyTmFtZSI6Ik51dHJpZHJpbmsifSwianRpIjoiYzkxMzVjM2YtZTBmMi00ZDhjLTgzNzgtMTMwZjgwMTNkMGM5IiwiaWF0IjoxNTk2NjMzNDg5LCJleHAiOjE1OTY2MzcwODl9.M6ZeTcnBwxfU5mChf-9aaEmytQojqkBFrtyr67OB5qM'
+  getProducts(token)
   
 })()
